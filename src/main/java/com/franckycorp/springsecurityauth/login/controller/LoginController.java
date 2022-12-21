@@ -7,15 +7,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LoginController {
 
-    @RequestMapping("/*")
+    @RequestMapping("/**")
     @RolesAllowed("USER")
     public String getUser() {
-        return "Welcome, User";
+        return "Welcome User";
     }
 
     @RequestMapping("/admin")
     @RolesAllowed("ADMIN")
     public String getAdmin() {
-        return "Welcome, Admin";
+        return "Welcome Admin";
+    }
+
+    @RequestMapping("/*")
+    public  String getGithub() {
+        return "Welcome Github user";
     }
 }

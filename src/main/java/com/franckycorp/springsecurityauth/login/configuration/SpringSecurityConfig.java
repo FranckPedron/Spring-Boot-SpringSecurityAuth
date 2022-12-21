@@ -20,7 +20,9 @@ public class SpringSecurityConfig {
                 .requestMatchers("/user").hasRole("USER")
                 .anyRequest().authenticated()
                 .and()
-        ).formLogin();
+        ).formLogin()
+                .and()
+                .oauth2Login();
         return http.build();
     }
 
